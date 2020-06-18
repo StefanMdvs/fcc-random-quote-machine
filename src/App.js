@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { random } from 'lodash';
 import 'typeface-roboto';
-//import Grid from '@material-ui/core/Grid';
-//import { withStyles } from '@material-ui/core/styles';
 import QuoteMachine from './components/QuoteMachine';
 import { Grid, withStyles } from '@material-ui/core';
 
@@ -10,7 +8,12 @@ const styles = {
   container: {
     display: 'flex',
     height: '100vh',
-    alignItems: 'center'
+    alignItems: 'center',
+    textAlign: 'center'
+  },
+  inside: {
+    backgroundColor: '#F0D3F7',
+
   }
 }
 
@@ -48,10 +51,9 @@ get generateNewQuoteIndex () {
   }
 
   render() {
-    console.log(this.state.selectedQuoteIndex)
   return (
     <Grid className={this.props.classes.container} id="quote-box" justify="center" container>
-      <Grid xs={11} lg={8} item>
+      <Grid className={this.props.classes.inside} xs={11} lg={8} item>
         {
           this.generateNewQuoteIndex ? 
           <QuoteMachine generateNewQuoteIndex={this.generateNewQuoteIndex} 

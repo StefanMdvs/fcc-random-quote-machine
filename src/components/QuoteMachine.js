@@ -15,10 +15,13 @@ const QuoteMachine = (props) => (
             </Typography>
         </CardContent>
         <CardAction>
-            <Button id="new-quote" size='small' onClick={props.assignNewQuoteIndex}>Next quote</Button>
+            <Button
+            variant="outlined" 
+            id="new-quote" size='medium' onClick={props.assignNewQuoteIndex}>Next quote</Button>
             <IconButton 
             id="tweet-quote"
             target="_blank"
+            title="Tweet this quote"
             href={encodeURI(`https://twitter.com/intent/tweet?text=${props.generateNewQuoteIndex.quote}&hashtags=100DaysOfCode`)}
             
             >
